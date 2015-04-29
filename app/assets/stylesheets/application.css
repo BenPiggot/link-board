@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+li {
+  list-style-type: none;
+  width: 50%;
+  line-height: 25px;
+}
+
+.glyphs {
+  float: right;
+}
+
+.grayish {
+  background-color: #efefef;
+}

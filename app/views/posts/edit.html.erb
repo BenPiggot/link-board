@@ -4,7 +4,6 @@
 <h1>Edit your post</h1>
 
 
-    <%= render "layouts/flash" %>
     <%= bootstrap_form_for :posts do |f| %>
     <%= f.text_field :title, :placeholder =>"Title" %>
     <%= f.text_field :link, :placeholder =>"Link"%>

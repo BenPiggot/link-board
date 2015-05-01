@@ -1,8 +1,41 @@
 <div class="container">
-<h1>Post</h1>
 
-<%= @post.title %>
-<div class="glyphs">
+<%= render 'layouts/flash' %>
+
+<h1><%= @post.title %> </h1>
+
+<a href="https://<%= @post.link %>">Read the Article!</a>
+
+<div class="comment-block">
+  <% @post.comments.each do |c| %>
+
+  <li class="comment-item list-group-item"><%= c.comment %>
+
+
+   <span class="glyphs"><%= bootstrap_form_for [@post, c, @vote] do |f| %></span>
+
+  <%= f.hidden_field :value, value: "-1" %>
+  <%= f.button "",  class: "btn btn-primary btn-xs glyphicon glyphicon-thumbs-down " %>
+  <% end %></span>
+
+  <span class="glyphs"><%= bootstrap_form_for [@post, c, @vote] do |f| %>
+  <%= f.hidden_field :value, value: "1" %>
+  <%= f.button "", class: "btn btn-primary btn-xs glyphicon glyphicon-thumbs-up" %>
+  <% end %></span>
+
+   <span class="glyphs score">Rating: <%= c.votes.to_a.inject(0) { |sum, n| sum + n.value } %></span>
+
+</li>
+  <% end %>
+
 
 </div>
+
+<div class="new-comment-block">
+  <%= bootstrap_form_for [@post, @comment] do |f| %>
+  <%= f.text_area :comment %>
+  <%= f.button "Add a comment", class: "btn btn-info" %>
+  <% end %>
+</div>
+
 </div>

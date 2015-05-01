@@ -1,6 +1,6 @@
 class SiteController < ApplicationController
 
-  # render signup page (GET)
+  # render site index (GET)
   def index
   end
 

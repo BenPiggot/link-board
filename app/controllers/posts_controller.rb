@@ -3,7 +3,13 @@ class PostsController < ApplicationController
   before_action :is_authenticated?
 
   def index
-    @posts = current_user.posts
+    @posts = Post.all
+    @vote = Vote.new
+    respond_to do |format|
+      format.json { render json:@posts}
+      format.xml {render xml:@posts}
+      format.html
+    end
   end
 
 
@@ -18,9 +24,13 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+
   def show
-    @post = current_user.posts.find(params[:id])
+    @vote = Vote.new
+    @comment = Comment.new
+    @post = Post.find(params[:id])
   end
+
 
   def destroy
     @post = current_user.posts.find(params[:id])

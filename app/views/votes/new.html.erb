@@ -1,0 +1,9 @@
+<div class="container">
+
+<%= bootstrap_form_for [:post, @vote] do |f| %>
+  <%= f.radio_button :value, 1, label: "Upvote" %>
+  <%= f.radio_button :value, -1, label: "Downvote" %>
+  <%= f.submit "Vote", class: "btn btn-primary" %>
+<% end %>
+
+</div>

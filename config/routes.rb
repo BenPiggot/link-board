@@ -27,7 +27,13 @@ Rails.application.routes.draw do
     # get 'posts/:id' => 'posts#show'
     # delete 'posts/:id' => 'posts#destroy'
 
-  resources :posts
+  resources :posts do
+    resources :votes
+    resources :comments, only: [:create] do
+      resources :votes
+    end
+  end
+
 
 # resources :posts, only: [:index, :new, :create]
   # Example resource route with options:

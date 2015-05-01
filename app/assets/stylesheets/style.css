@@ -1,0 +1,76 @@
+.index-list {
+  list-style-type: none;
+  width: 50%;
+  height: 50px;
+  line-height: 25px;
+}
+
+body > div > a {
+  color: #666;
+  font-weight: 200;
+}
+
+body > div > a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  list-style-type: none;
+}
+
+td > a {
+  color: #666;
+  font-weight: 200;
+}
+
+td > a:hover {
+  text-decoration: none;
+  color: black ;
+}
+
+
+
+td {
+  min-width: 80px;
+}
+
+th {
+  font-weight: 400;
+}
+
+.glyphs {
+  float: right;
+}
+
+.form-glyphs {
+  font-size: 0.8em;
+}
+
+.grayish {
+  background-color: #efefef;
+}
+
+.control-label {
+  font-weight: 600;
+}
+
+.new-comment-block {
+  margin-top: 3em;
+  width: 80%;
+  margin-bottom: 2em;
+}
+
+.comment-block {
+  margin-top: 2em;
+  width: 80%;
+}
+
+.comment-box {
+ margin-bottom: 1em;
+}
+
+.score {
+  margin-right: 0.5em;
+  font-weight: 400;
+}

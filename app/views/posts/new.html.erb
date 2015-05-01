@@ -2,7 +2,7 @@
 
 <h1>Create a new post</h1>
 
-    <%= bootstrap_form_for :post do |f| %>
+    <%= bootstrap_form_for @post do |f| %>
     <%= f.text_field :title, :placeholder =>"Create a Title" %>
     <%= f.text_field :link, :placeholder =>"Enter the link"%>
     <%= f.submit "Add a new post", class: "btn btn-info" %>

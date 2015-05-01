@@ -1,8 +1,19 @@
+
 class User < ActiveRecord::Base
 
   has_secure_password
 
+  # posts by this user
   has_many :posts
+
+  # comments by this user
+  has_many :comments
+
+  # votes ABOUT this user
+  has_many :votes, as: :votable
+
+  # votes cast by the user
+  has_many :ratings, class_name: 'Vote'
 
    validates :email,
     presence: true,
@@ -18,6 +29,7 @@ class User < ActiveRecord::Base
     presence: true,
     length: {maximum: 20},
     :on => :create
+
 
   def self.authenticate email, password
     User.find_by_email(email).try(:authenticate, password)

@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20150501010418) do
 
   create_table "votes", force: :cascade do |t|
     t.integer  "value"
+    t.integer  "comment_id"
     t.integer  "user_id"
     t.integer  "votable_id"
     t.string   "votable_type"
@@ -51,6 +52,7 @@ ActiveRecord::Schema.define(version: 20150501010418) do
     t.datetime "updated_at",   null: false
   end
 
+  add_index "votes", ["comment_id"], name: "index_votes_on_comment_id"
   add_index "votes", ["user_id"], name: "index_votes_on_user_id"
   add_index "votes", ["votable_type", "votable_id"], name: "index_votes_on_votable_type_and_votable_id"
 

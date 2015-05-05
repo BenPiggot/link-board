@@ -5,6 +5,16 @@
   line-height: 25px;
 }
 
+body {
+  background: url(http://cdn.wonderfulengineering.com/wp-content/uploads/2014/04/code-wallpaper-2.jpg);
+  background-attachment: fixed;
+}
+
+.link_table {
+  background: rgba(0,0,0,0.5);
+  color: white;
+}
+
 body > div > a {
   color: #666;
   font-weight: 200;
